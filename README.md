@@ -1,24 +1,38 @@
-# README
+# Quote DB
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I've collected quotes over the years, and they are scattered in many places, many formats, and many styles. This is an attempt to put them all in one place and keep them there.
 
-Things you may want to cover:
+## Quote Keys
 
-* Ruby version
+In some for or another, the following "keys" have been used to hold quotes:
 
-* System dependencies
+- cite
+- text
+- node
+- title
+- note
+- keywords
+- source
+- img
 
-* Configuration
+## rails new command
 
-* Database creation
+    rails new quotedb -d postgresql
 
-* Database initialization
+`.railsrc`:
 
-* How to run the test suite
+    --skip-spring --skip-turbolinks --skip-action-cable --skip-sprockets --skip-listen --skip-coffee --skip-test --skip-system-test --webpack=react
 
-* Services (job queues, cache servers, search engines, etc.)
+## Initial Structure
 
-* Deployment instructions
+- Quote model
+- Keyword model (might call this Tag instead)
+- Taggings - a join model between Keyword and Quote (better than KeywordQuote as the default for join models in Rails)
 
-* ...
+## Thoughts on Front End
+
+I've been developing using the `webpacker` and `react-rails` gems, which provides the `react_component` method. In this app, I'm going to try to just use the `webpacker` gem alone, though still implementing react, but not use the `react_component`, just use the packs to create the client. We'll see.
+
+## GraphQL or not?
+
+I've also been using GraphQL a lot, I'll probably use it here, simply because I like it a lot. For the front end, I'll add in Apollo Client as well.
