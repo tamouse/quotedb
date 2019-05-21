@@ -23,6 +23,10 @@ In some for or another, the following "keys" have been used to hold quotes:
 
     --skip-spring --skip-turbolinks --skip-action-cable --skip-sprockets --skip-listen --skip-coffee --skip-test --skip-system-test --webpack=react
 
+### update Tue May 21 12:18:36 2019
+
+Turns out, to use the `GraphiQL` front end to the GraphQL server, you need sprockets! Uncommented it in the `config/applicaton.rb` file.
+
 ## Initial Structure
 
 - Quote model
